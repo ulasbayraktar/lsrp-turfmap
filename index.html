@@ -65,50 +65,6 @@
 				return el;
 			}
 
-			factions.forEach(function(faction) 
-			{
-			_factions[faction.id] = faction;
-			$("#factlist").append("<li class=\"fact fact" + faction.id + "\"><div class=\"factSquare\" style=\"background-color: #" + faction.color + "\"></div> " + faction.name + "<span class=\"factid\">" + faction.id + "</span></li>");
-			faction.turfs.forEach(function(points, index) {
-				var turfSVG = makeSVG('polygon', {
-					'class': faction.id,
-					'name': index,
-					'points': points,
-					stroke: 'white',
-					'stroke-width': 2,
-					fill: '#' + faction.color,
-					opacity: 0.3
-				});
-				var turf = $(turfSVG).appendTo("#_mapa");
-				_factions[faction.id].turfPolygon[index] = turf;
-
-				var fSize = 0.5;
-				// Her bir polygonun boyutunu al
-				var polygonWidth = faction.limits[index].maxx - faction.limits[index].minx;
-				var polygonHeight = faction.limits[index].maxy - faction.limits[index].miny;
-				// Metnin boyutunu ayarla
-				if (polygonWidth > 200 || polygonHeight > 200) {
-					fSize = 1.1;
-				} else if (polygonWidth > 90 || polygonHeight > 90) {
-					fSize = 0.8;
-				}
-
-				$("<div>" + faction.name + "</div>").css({
-					'position': 'absolute',
-					'top': faction.turfcenter[index][1] - 10,
-					'left': faction.limits[index].minx + 'px',
-					'width': polygonWidth + 'px', // Genişlik olarak polygonun genişliğini kullan
-					'text-align': 'center',
-					'font-size': fSize + 'em',
-					'font-weight': 'bold',
-					'color': 'white',
-					'text-transform': 'uppercase',
-					'font-family': 'tahoma',
-					'pointer-events': 'none'
-				}).addClass('captionzzz').appendTo("#map_images");
-			});
-		});
-
 		</script>
 	</head>
 	<body>
@@ -136,7 +92,6 @@
 			</div>
 		</div>
 		<span id="map_coords">LS-RP Dynamic Faction Turf Map 2014 - 2020</span><br>
-		<script type="text/javascript" data-cfasync="false" src="map.js"></script>
 		<script>
 		$("#clearPoints").click(function(){
 			$(".point").remove();
