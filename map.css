@@ -20,7 +20,7 @@
 	width: 6000px;
 	height: 6000px;
 	overflow: hidden;
-	background: url('https://ls-rp.com/turfmap/res/img/map.jpg') no-repeat;
+	background: url('./images/map.jpg') no-repeat;
 	background-size: 6000px 6000px;
 }
 #_mapa {
@@ -61,28 +61,6 @@
 
 #panel_content{
 	opacity: 1;
-}
-
-#logo{
-	background-image: url(https://cdn.discordapp.com/attachments/812204328923299871/845098789832491008/logo-with-ip.png); background-size: auto 70%;
-	background-repeat: no-repeat;
-	height: 150px;
-	margin-left: -200px;
-}
-
-#logout{
-	position: absolute;
-	top: 0;
-	right: 0;
-	color: white;
-	background: black;
-	opacity: 0.9;
-	width: 65px;
-	padding: 5px;
-	font-weight: bold;
-	cursor: pointer;
-	font-size: 0.9em;
-	text-transform: uppercase;
 }
 
 #map_coords{
